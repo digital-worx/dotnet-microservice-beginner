@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 using ApiGateway.V2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ApiGateway.V2.Entities;
 
 namespace ApiGateway.V2._0.Controllers
 {
   [ApiVersion("2.0")]
   [ApiController]
-  [Route("[controller]")]
+  [Route("api/v{version:apiVersion}/[controller]")]
   public class FlatmateMgmtController : ControllerBase
   {
     private readonly IFlatmateMgmtService _FlatmateMgmtService;
@@ -24,10 +25,10 @@ namespace ApiGateway.V2._0.Controllers
       _FlatmateMgmtService = flatmateMgmtService;
     }
 
-    [HttpGet]
-    public async Task<ActionResult<string>> GetFlatemateByIdAsync()
+    [HttpGet("FlatmateById/")]
+    public async Task<ActionResult<FlatmateDataEntity>> GetFlatemateByIdAsync(string id)
     {
-      return await _FlatmateMgmtService.GetFlatemateById("hell");
+      return await _FlatmateMgmtService.GetFlatmateById(id);
     }
   }
 }

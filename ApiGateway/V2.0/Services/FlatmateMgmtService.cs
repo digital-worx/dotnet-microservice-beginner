@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using ApiGateway.V2.Entities;
 using ApiGateway.V2.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,7 +24,7 @@ namespace ApiGateway.V2.Services
     }
 
 
-    public async Task<ActionResult<string>> GetFlatemateById(string id)
+    public async Task<ActionResult<FlatmateDataEntity>> GetFlatmateById(string id)
     {
       try
       {
@@ -33,9 +34,15 @@ namespace ApiGateway.V2.Services
         // string addInstitutionResponse = await HttpClientServiceRepository.PostHttpclient(string.Empty, string.Empty, addAdviceServiceUrl, appPostData);
 
         // AdviceDataEntity Advice = JsonConvert.DeserializeObject<AdviceDataEntity>(addInstitutionResponse);
-        string name = "rohit";
-        return name;
-
+        FlatmateDataEntity flatmateDataEntity = new FlatmateDataEntity();
+        if (id == "rohit")
+        {
+          flatmateDataEntity.id = "rb";
+          flatmateDataEntity.Name = "rohit";
+          flatmateDataEntity.DoB = DateTime.Now;
+          return flatmateDataEntity;
+        }
+        return flatmateDataEntity;
       }
       catch (Exception)
       {

@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using ApiGateway.V2.Interfaces;
+using ApiGateway.V1.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;

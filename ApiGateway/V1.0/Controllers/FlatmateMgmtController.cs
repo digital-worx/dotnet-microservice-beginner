@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Serilog;
 using System.Threading.Tasks;
-using ApiGateway.V2.Interfaces;
+using ApiGateway.V1.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace ApiGateway.V1._0.Controllers
 {
-  [ApiVersion("2.0")]
+  [ApiVersion("1.0")]
   [ApiController]
   [Route("[controller]")]
   public class FlatmateMgmtController : ControllerBase
