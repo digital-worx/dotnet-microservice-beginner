@@ -12,7 +12,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 
-namespace AdminService
+namespace ApiGateway
 {
   public class Startup
   {
@@ -49,8 +49,8 @@ namespace AdminService
         });
       services.AddSwaggerGen(c =>
       {
-        c.SwaggerDoc("v1", new OpenApiInfo { Title = "AdminService", Version = "v1" });
-        c.SwaggerDoc("v2", new OpenApiInfo { Title = "AdminService", Version = "v2" });
+        c.SwaggerDoc("v1", new OpenApiInfo { Title = "ApiGateway", Version = "v1" });
+        c.SwaggerDoc("v2", new OpenApiInfo { Title = "ApiGateway", Version = "v2" });
       });
 
     }
@@ -68,7 +68,7 @@ namespace AdminService
             // build a swagger endpoint for each discovered API version 
             foreach (var description in provider.ApiVersionDescriptions)
             {
-              options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", "AdminService " + description.GroupName.ToUpperInvariant());
+              options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", "ApiGateway " + description.GroupName.ToUpperInvariant());
             }
           }
         );

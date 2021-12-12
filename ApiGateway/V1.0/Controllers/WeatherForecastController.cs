@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace AdminService.V1._0.Controllers
+namespace ApiGateway.V1._0.Controllers
 {
   [ApiVersion("1.0")]
   [ApiController]

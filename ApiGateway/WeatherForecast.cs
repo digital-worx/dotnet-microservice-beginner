@@ -1,6 +1,6 @@
 using System;
 
-namespace AdminService
+namespace ApiGateway
 {
   public class WeatherForecast
   {
