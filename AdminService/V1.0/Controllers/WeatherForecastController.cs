@@ -14,8 +14,8 @@ namespace AdminService.V1._0.Controllers
   {
     private static readonly string[] Summaries = new[]
     {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+      "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+     };
 
     private readonly ILogger<WeatherForecastController> _logger;
 
@@ -25,7 +25,7 @@ namespace AdminService.V1._0.Controllers
     }
 
     [HttpGet]
-    public IEnumerable<WeatherForecast> Get()
+    public async Task<ActionResult<IEnumerable<WeatherForecast>>> Get()
     {
       var rng = new Random();
       return Enumerable.Range(1, 5).Select(index => new WeatherForecast
