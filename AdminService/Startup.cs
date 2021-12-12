@@ -62,8 +62,16 @@ namespace AdminService
       {
         app.UseDeveloperExceptionPage();
         app.UseSwagger();
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "AdminService v1"));
-        app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v2/swagger.json", "AdminService v2"));
+        app.UseSwaggerUI(
+          options =>
+          {
+            // build a swagger endpoint for each discovered API version 
+            foreach (var description in provider.ApiVersionDescriptions)
+            {
+              options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json", "AdminService " + description.GroupName.ToUpperInvariant());
+            }
+          }
+        );
       }
 
       app.UseRouting();
