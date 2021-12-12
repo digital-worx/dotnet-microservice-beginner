@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace AdminService.V1._0.Controllers
+namespace AdminService.V2._0.Controllers
 {
-  [ApiVersion("1.0")]
+  [ApiVersion("2.0")]
   [ApiController]
   [Route("[controller]")]
   public class WeatherForecastController : ControllerBase
   {
     private static readonly string[] Summaries = new[]
     {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm2", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
     private readonly ILogger<WeatherForecastController> _logger;
@@ -33,7 +33,7 @@ namespace AdminService.V1._0.Controllers
         Date = DateTime.Now.AddDays(index),
         TemperatureC = rng.Next(-20, 55),
         Summary = Summaries[rng.Next(Summaries.Length)],
-        Version = "1.0"
+        Version = "2.0"
       })
       .ToArray();
     }
