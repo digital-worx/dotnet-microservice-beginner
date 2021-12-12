@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Serilog;
 
-namespace ApiGateway.V2.Services
+namespace ApiGateway.V1.Services
 {
   public class FlatmateMgmtService : IFlatmateMgmtService
   {

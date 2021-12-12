@@ -7,7 +7,7 @@ using ApiGateway.V2.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ApiGateway.V2._0.Controllers
+namespace ApiGateway.V1._0.Controllers
 {
   [ApiVersion("2.0")]
   [ApiController]
