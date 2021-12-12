@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ApiGateway.V2.Interfaces;
+using ApiGateway.V2.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -26,7 +28,7 @@ namespace ApiGateway
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-
+      services.AddSingleton<IFlatmateMgmtService, FlatmateMgmtService>();
       services.AddControllers();
       services.AddApiVersioning(
       options =>
@@ -34,7 +36,7 @@ namespace ApiGateway
         // reporting api versions will return the headers "api-supported-versions" and "api-deprecated-versions"
         options.ReportApiVersions = true;
         options.AssumeDefaultVersionWhenUnspecified = true;
-        options.DefaultApiVersion = new ApiVersion(1, 0);
+        options.DefaultApiVersion = new ApiVersion(2, 0);
       });
       services.AddVersionedApiExplorer(
         options =>
