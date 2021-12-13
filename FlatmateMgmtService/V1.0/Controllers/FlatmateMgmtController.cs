@@ -25,7 +25,7 @@ namespace FlatmateMgmtService.V1._0.Controllers
       _FlatmateMgmtService = flatmateMgmtService;
     }
 
-    [HttpGet("FlatmateById/")]
+    [HttpGet("FlatmateBy/{id}")]
     public async Task<ActionResult<FlatmateDataModel>> GetFlatemateByIdAsync(string id)
     {
       return await _FlatmateMgmtService.GetFlatmateById(id);

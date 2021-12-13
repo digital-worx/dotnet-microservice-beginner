@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using ApiGateway.V2.Interfaces;
 using ApiGateway.V2.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
@@ -28,6 +30,7 @@ namespace ApiGateway
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddSingleton<HttpClient, HttpClient>();
       services.AddSingleton<IFlatmateMgmtService, FlatmateMgmtService>();
       services.AddControllers();
       services.AddApiVersioning(

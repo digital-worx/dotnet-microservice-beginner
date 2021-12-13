@@ -25,7 +25,7 @@ namespace ApiGateway.V2._0.Controllers
       _FlatmateMgmtService = flatmateMgmtService;
     }
 
-    [HttpGet("FlatmateById/")]
+    [HttpGet("FlatmateBy/{id}")]
     public async Task<ActionResult<FlatmateDataEntity>> GetFlatemateByIdAsync(string id)
     {
       return await _FlatmateMgmtService.GetFlatmateById(id);
